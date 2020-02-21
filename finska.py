@@ -2,12 +2,13 @@
 
 import os
 import subprocess
+import sys
 
 print('1: Translate a file')
 print('2: Translate a text input')
 method = input('Choose translation method (1 or 2): ')
 
-rules = [['g','k'],['k','kk'],['b','p'],['i','ii'],['å','ä'],['d','t'],['a','ai'],['e','ei'],['meit','saatana'],['jaikk','saatana']]
+rules = [['g','k'],['k','kk'],['b','p'],['i','ii'],['d','t'],['a','ai'],['e','ei'],['å','saatana'],['meit ','saatana '],['jaikk ','saatana '],['är ','perkele ']]
 
 def fileInput():
 	with open(filePath,'r') as file:
@@ -37,4 +38,5 @@ elif method == '2':
 	textInput()
 
 else:
-	print('Error: Please press 1 or 2 to choose a calculation method')
+	print('Error: Please enter 1 or 2 to choose translation method')
+	subprocess.call(['python3','finska.py'])
